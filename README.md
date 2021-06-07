@@ -1,5 +1,6 @@
 # app-lanches-front
-App Front-End do projeto lanches saudaveis, realizado como teste para a Elofy.
+App Front-End do projeto lanches saudaveis, realizado como teste para a Elofy. <br />
+Desenvolvido utilizando Vue JS.
 
 ## Project setup
 ```
