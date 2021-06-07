@@ -4,78 +4,79 @@
     <div class="header">
       <h1>Usuários</h1>
     </div>
-
-    <table>
-      <thead>
-        <tr>
-          <th scope="col"></th>
-          <th scope="col">Nome</th>
-          <th scope="col">Altura 
-            <div class="div-select">
-              <select v-model="heightFilter" v-on="{change: heightHandler}">
-                <option value="todos">Todos</option>
-                <option value="alto">Altos</option>
-                <option value="mediano">Medianos</option>
-                <option value="baixo">Baixos</option>
-              </select>
-            </div>
-          </th>
-          <th scope="col">Intolerante a lactose
-            <div class="div-select">
-              <select v-model="lactoseFilter" v-on="{change: lactoseHandler}">
-                <option value="todos">Todos</option>
-                <option value="sim">Sim</option>
-                <option value="nao">Não</option>
-              </select>
-            </div>
-          </th>
-          <th scope="col">Peso 
-            <div class="div-select">
-              <select v-model="weightFilter" v-on="{change: weightHandler}">
-                <option value="todos">Todos</option>
-                <option value="acima">Acima do peso</option>
-                <option value="ideal">Peso ideal</option>
-                <option value="abaixo">Abaixo do peso</option>
-              </select>
-            </div>
-          </th>
-          <th scope="col">Atleta
-            <div class="div-select">
-              <select v-model="athleteFilter" v-on="{change: athleteHandler}">
-                <option value="todos">Todos</option>
-                <option value="sim">Sim</option>
-                <option value="nao">Não</option>
-              </select>
-            </div>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(user) of usersSorted" :key="user.Identificador">
-          <td> {{user.Identificador}} </td>
-          <td> {{user.nome_usuario}} </td>
-          <td> {{user.altura}} </td>
-          <!-- <td> {{lactoseToStr(index)}} </td> -->
-          <td> 
-            <div class="box-boolean" v-bind:class="{'class-yes': user.lactose == 1}">
-              <span class="box-text">
-                <!-- {{user.lactoseToStr}} -->
-                {{user.lactose ? 'Sim' : 'Não'}}
-              </span>
-            </div>  
-          </td>
-          <td> {{user.peso}} </td>
-          <!-- <td> {{atletaToStr(index)}} </td> -->
-          <td> 
-            <div class="box-boolean" v-bind:class="{'class-yes': user.atleta == 1}">
-              <span class="box-text">
-                {{user.atleta ? 'Sim' : 'Não'}}
-              </span>
-            </div>  
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-users">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Nome</th>
+            <th scope="col">Altura 
+              <div class="div-select">
+                <select v-model="heightFilter" v-on="{change: heightHandler}">
+                  <option value="todos">Todos</option>
+                  <option value="alto">Altos</option>
+                  <option value="mediano">Medianos</option>
+                  <option value="baixo">Baixos</option>
+                </select>
+              </div>
+            </th>
+            <th scope="col">Intolerante a lactose
+              <div class="div-select">
+                <select v-model="lactoseFilter" v-on="{change: lactoseHandler}">
+                  <option value="todos">Todos</option>
+                  <option value="sim">Sim</option>
+                  <option value="nao">Não</option>
+                </select>
+              </div>
+            </th>
+            <th scope="col">Peso 
+              <div class="div-select">
+                <select v-model="weightFilter" v-on="{change: weightHandler}">
+                  <option value="todos">Todos</option>
+                  <option value="acima">Acima do peso</option>
+                  <option value="ideal">Peso ideal</option>
+                  <option value="abaixo">Abaixo do peso</option>
+                </select>
+              </div>
+            </th>
+            <th scope="col">Atleta
+              <div class="div-select">
+                <select v-model="athleteFilter" v-on="{change: athleteHandler}">
+                  <option value="todos">Todos</option>
+                  <option value="sim">Sim</option>
+                  <option value="nao">Não</option>
+                </select>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(user) of usersSorted" :key="user.Identificador">
+            <td> {{user.Identificador}} </td>
+            <td> {{user.nome_usuario}} </td>
+            <td> {{user.altura}} </td>
+            <!-- <td> {{lactoseToStr(index)}} </td> -->
+            <td> 
+              <div class="box-boolean" v-bind:class="{'class-yes': user.lactose == 1}">
+                <span class="box-text">
+                  <!-- {{user.lactoseToStr}} -->
+                  {{user.lactose ? 'Sim' : 'Não'}}
+                </span>
+              </div>  
+            </td>
+            <td> {{user.peso}} </td>
+            <!-- <td> {{atletaToStr(index)}} </td> -->
+            <td> 
+              <div class="box-boolean" v-bind:class="{'class-yes': user.atleta == 1}">
+                <span class="box-text">
+                  {{user.atleta ? 'Sim' : 'Não'}}
+                </span>
+              </div>  
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
   
 </template>
